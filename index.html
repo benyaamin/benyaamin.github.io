@@ -8,7 +8,7 @@
             body {
                 font-family: 'Arial', sans-serif;
                 line-height: 1.6;
-                margin: 60px 20px 20px; /* Added top padding to make space for the fixed navbar */
+                margin: 60px 20px 20px;
                 background-color: #f8f8f8;
                 color: #333;
                 text-align: center;
@@ -127,8 +127,25 @@
             .navbar a:hover {
                 color: #3498db;
             }
-        </style>
-    </head>
+    
+            /* Styles for the "Move to Top" button */
+            #moveToTop {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+    
+            #moveToTop:hover {
+                background-color: #555;
+            }
+        </style>    </head>
     
     <body>
         <!-- Floating menu (navbar) -->
@@ -766,5 +783,30 @@
         <footer>
             <p>&copy; 2023 Benyamin Agha Ebrahimi</p>
         </footer>
+            <!-- "Move to Top" button -->
+    <button id="moveToTop" onclick="scrollToTop()">Move to Top</button>
+
+    <script>
+        // Show/hide "Move to Top" button based on scroll position
+        window.onscroll = function () {
+            showMoveToTopButton();
+        };
+
+        function showMoveToTopButton() {
+            var button = document.getElementById("moveToTop");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+
+        // Scroll to the top when the button is clicked
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+    </script>
+
     </body>
 </html>
