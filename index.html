@@ -1,919 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Benyamin Agha Ebrahimi</title>
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-            body {
-                font-family: 'Arial', sans-serif;
-                line-height: 1.6;
-                margin: 0px 20px 20px 150px;
-                background-color: #eeebeba8;
-                color: #333;
-                text-align: center;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benyamin Agha Ebrahimi</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 0 20px;
+        }
 
+        /* Navbar Styling */
+        .navbar {
+            position: fixed;
+            left: 0;
+            width: 120px;
+            height: 100vh;
+            background-color: #333;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: start;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: #3498db;
+        }
+
+        .navbar i {
+            margin-right: 8px;
+        }
+
+        /* Header Styling */
+        header {
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header .profile-picture {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        section h2 {
+            color: #3498db;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        p, ul, ol {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Scroll-to-Top Button */
+        #moveToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #moveToTop:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                justify-content: center;
+                position: static;
+                padding: 10px;
             }
-    
-            header {
-                margin-bottom: 30px;
+
+            .navbar a {
+                margin: 0 10px;
+                font-size: 14px;
             }
-    
-            h1 {
-                border-bottom: 2px solid #3498db;
-                padding-bottom: 10px;
-                margin-bottom: 20px;
-                color: #3498db;
-                font-size: 36px;
-                font-weight: bold;
-            }
-    
-            p {
-                color: #555;
-                line-height: 1.5 !important;
-            }
-    
+
             section {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                margin-bottom: 30px;
-                text-align: left;
+                padding: 15px;
             }
-    
-            h2 {
-                color: #3498db;
-                font-size: 24px;
-                margin-top: 0;
-            }
-    
-            ul {
-                list-style: none;
-                padding: 0;
+
+            header {
                 margin: 0;
             }
-    
-            ul li {
-                margin-bottom: 5px;
-            }
-    
-            footer {
-                margin-top: 50px;
-                padding: 10px;
-                background-color: #333;
-                color: #fff;
-                border-radius: 8px;
-            }
-    
-            .profile-picture {
-                border-radius: 50%;
-                width: 150px;
-                height: 150px;
-                object-fit: cover;
-                margin-bottom: 20px;
-                margin-top: 20px;
-            }
-    
-            table {
-                border-collapse: collapse;
-                margin-left: 11.775pt;
-            }
-    
-            td {
-                border-top: 1pt solid #7E7E7E;
-                border-bottom: 1pt solid #7E7E7E;
-                text-indent: 0;
-                line-height: 11pt;
-                text-align: left;
-            }
-    
-            p {
-                text-indent: 0;
-                text-align: left;
-            }
-    
-            .s10 {
-                padding-left: 6pt;
-            }
-    
-            .s11 {
-                padding-left: 49pt;
-            }
-    
-            .s12 {
-                margin-left: 5pt;
-            }
-    
-            .s13 {
-                padding-left: 6pt;
-            }
-    
-            /* Added styles for the floating menu */
-            .navbar {
-                position: fixed;
-                /* top: 0; */
-                left: 0;
-                width: 100px;
-                height: 100vh;
-                background-color: #333;
-                padding: 10px;
-                text-align: left;
-                z-index: 1000;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: start;
-            }
-    
-            .navbar a {
-                color: white;
-                text-decoration: none;
-                margin: 15px;
-                font-size: 16px;
-            }
-    
-            .navbar a:hover {
-                color: #3498db;
-            }
-    
-            /* Styles for the "Move to Top" button */
-            #moveToTop {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: #3498db;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                padding: 10px 15px;
-                cursor: pointer;
-            }
-    
-            #moveToTop:hover {
-                background-color: #555;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Floating menu (navbar) -->
-        <div class="navbar">
-            <a href="#education">Education</a>
-            <a href="#research">Research Experience</a>
-            <a href="#university">MSc Researches</a>
-            <a href="#experience">Professional Experience</a>
-            <a href="#software">Software</a>
-            <a href="#skills">Skills & Interests</a>
-        </div>
-        <header>
-            <img src="src/images/photo_2024-04-16_16-44-11 2.jpg" alt="Ben" class="profile-picture">
-            <h1>Benyamin Agha Ebrahimi</h1>
-            <div style="display: flex; flex-direction: column; row-gap: 4px">
-              
-                <div style="display: flex; align-items: center; margin-bottom: 0px;">
-                    <i class="fa-sharp fa-solid fa-location-dot" style="font-size: 24px;"></i>
-                    <p style="margin-left: 6px; text-decoration:none; margin-right: 2px; margin-top: 0; margin-bottom: 0;">
-                       
-                        Tehran, Iran
-                    </p>
-                </div>
-                <div style="display: flex; align-items: center ;">
-                    <i class="fa-solid fa-envelope" style="font-size: 24px;"></i>
-                    <a href="mailto:benyamin.eb@gmail.com" style="margin-left: 4px; text-decoration: none;">
-                        benyamin.eb@gmail.com
-                    </a>
-                </div>
-                <div style="display: flex; align-items: center ;">
-                    <i class="fa-brands fa-linkedin" style="font-size: 28px;"></i>
-                    <a href="https://www.linkedin.com/in/ben-eb/" style="margin-left: 4px; text-decoration: none;">LinkedIn</a>
-                </div>
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#education"><i class="fas fa-graduation-cap"></i>Education</a>
+        <a href="#research"><i class="fas fa-flask"></i>Research</a>
+        <a href="#university"><i class="fas fa-university"></i>University</a>
+        <a href="#experience"><i class="fas fa-briefcase"></i>Experience</a>
+        <a href="#software"><i class="fas fa-code"></i>Software</a>
+        <a href="#skills"><i class="fas fa-cogs"></i>Skills</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <img src="src/images/photo_2024-04-16_16-44-11 2.jpg" alt="Ben's Profile Picture" class="profile-picture">
+        <h1>Benyamin Agha Ebrahimi</h1>
+        <div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-map-marker-alt"></i>
+                <p style="margin: 0 0 0 10px;">Tehran, Iran</p>
             </div>
-        </header>
-        <section id="education">
-            <h2>Education</h2>
-            <table style="border-collapse:collapse;margin-left:5.525pt" cellspacing="0">
-                <tr style="height:26pt">
-                    <td style="width:387pt;border-top-style:solid;border-top-width:0pt">
-                        <!-- <td style="width:387pt;"> -->
-                        <p class="s4" style="padding-top: 0pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">MSc of Artificial Intelligence at Amirkabir University of Technology</p>
-                    </td>
-                    <td style="width:134pt;border-top-style:solid;border-top-width:0pt">
-                        <p class="s5" style="padding-right: 7pt;text-indent: 0pt;line-height: 12pt;text-align: right;">Tehran, Iran</p>
-                        <p class="s5" style="padding-right: 7pt;text-indent: 0pt;line-height: 12pt;text-align: right;">Oct, 2018</p>
-                    </td>
-                </tr>
-                <tr style="height:67pt">
-                    <td style="width:521pt" colspan="2">
-                        <p class="s1" style="padding-left: 7pt;text-indent: 0pt;text-align: left;">Thesis: Multilabel Classification Focusing on Biology Dataset</p>
-                        <p class="s1" style="padding-left: 7pt;text-indent: 0pt;text-align: left;">During my master&#39;s, my main focus was to understand top multi-label classification models and assure whether it was possible to improve some of them or could consider a new idea, (for more details please refer to the Thesis</p>
-                        <p class="s1" style="padding-left: 7pt;text-indent: 0pt;line-height: 13pt;text-align: left;">section).</p>
-                        <p class="s1" style="padding-left: 7pt;text-indent: 0pt;line-height: 12pt;text-align: left;">Supervisor: Dr. Maryam A. Haeri</p>
-                    </td>
-                </tr>
-                <tr style="height:25pt">
-                    <!-- <td style="width:387pt"> -->
-                    <td style="width:387pt;border-top-style:solid;border-top-width:2pt">
-                        <p class="s4" style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">BSc of Computer Engineering at IAU</p>
-                    </td>
-                    <td style="width:134pt;border-top-style:solid;border-top-width:2pt">
-                        <p class="s5" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">Tehran, Iran</p>
-                        <p class="s5" style="padding-right: 7pt;text-indent: 0pt;text-align: right;">Sep, 2014</p>
-                    </td>
-                </tr>
-                <tr style="height:41pt">
-                    <!-- <td style="width:387pt;border-bottom-style:solid;border-bottom-width:2pt"> -->
-                    <td style="width:387pt;border-bottom-style:solid;border-bottom-width:0pt">
-                        <p class="s1" style="padding-left: 7pt;text-indent: 0pt;line-height: 12pt;text-align: left;">Thesis: Human Mobile Interaction on iOS Devices</p>
-                        <p class="s1" style="padding-left: 7pt;text-indent: 0pt;text-align: left;">Supervisor: Dr. Nima Shahbazi</p>
-                        <!-- <p class="s1" style="padding-left: 7pt;text-indent: 0pt;line-height: 13pt;text-align: left;">Supervisor: Dr. Nima Shahbazi</p> -->
-                    </td>
-                </tr>
-            </table>
-        </section>
-        <section id="research">
-            <h2>Research Experience</h2>
-            <p>
-                <strong>Social Network Researcher at Naazer, Tehran, Iran</strong>
-            </p>
-            <p>From: Feb, 2018 to: Apr, 2020</p>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">
-                A R&amp;D interdisciplinary project ranging from sociology, politics, and computer engineering to artificial intelligence in order to produce a dashboard that facilitates gaining a variety of insights from the Persian community on
-                <b>Twitter</b>
-                such as:
-            </p>
-            <table style="border-collapse:collapse;margin-left:33.275pt" cellspacing="0">
-                <tr style="height:14pt">
-                    <td style="width:163pt">
-                        <ul id="l1">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 20pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Trends</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td style="width:280pt">
-                        <ul id="l2">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 60pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Topic Influencers</p>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr style="height:14pt">
-                    <td style="width:163pt">
-                        <ul id="l3">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 20pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Community Detection</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td style="width:280pt">
-                        <ul id="l4">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 60pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Topic Conflicts</p>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr style="height:14pt">
-                    <td style="width:163pt;border-bottom-style:solid;border-bottom-width:2pt">
-                        <ul id="l5">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 20pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Heat Map of Trends</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td style="width:273pt;border-bottom-style:solid;border-bottom-width:2pt">
-                        <ul id="l6">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 60pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Cloud words of a specific day or a time window</p>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">The output dashboard included three main traits as:</p>
-            <table style="border-collapse:collapse;margin-left:33.275pt" cellspacing="0">
-                <tr style="height:14pt">
-                    <td style="width:126pt">
-                        <ul id="l7">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 20pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Daily Analysis</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td style="width:183pt">
-                        <ul id="l8">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 63pt;text-indent: -18pt;line-height: 13pt;text-align: left;">User-based Analysis</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td style="width:134pt">
-                        <ul id="l9">
-                            <li data-list-text="">
-                                <p class="s1" style="padding-left: 48pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Real-Time Analysis</p>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: left;">
-                At beginning of the project, this platform was able to handle 40K of Persian tweets but eventually reached to store and analyze 1.5M of Persian tweets per day from 8
-                <span class="s8">th</span>
-                Aug 2018 to 4
-                <span class="s8">th</span>
-                Apr 2019.
-            </p>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: left;">Used Technologies:</p>
-            <p style="padding-left: 48pt;text-indent: 0pt;line-height: 13pt;text-align: left;">
-                Data Side:
-                <span class="h3">Python – Tweepy – Scipy – Numpy – Pandas – Scikit-Learn</span>
-            </p>
-            <p style="padding-left: 48pt;text-indent: 0pt;line-height: 13pt;text-align: left;">
-                Back-End Side:
-                <span class="h3">Python – Django – MongoDB – Celery</span>
-            </p>
-            <p style="padding-left: 48pt;text-indent: 0pt;text-align: left;">
-                Front-End Side:
-                <span class="h3">Python – Plotly – Dash – HTML – Matplotlib</span>
-            </p>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">My role as a Social Network Researcher was to come up with the best strategies and models to grasp the insight from the Twitter data including Information Retrieval Techniques, Complex Network Algorithms such as community detection and NLP methods, and Topic Modeling which resulted in a robust hybrid technique. Moreover, I had to design the most proper way to visualize the gathered data in different ways ranging from Time Series, Pie Charts, and Heat Maps for influencers/Trends vs dates, to cloud words in order to properly depict the insight. Fortunately, this opportunity enforced me to broaden my responsibilities from designing to implementing the crawler itself by using Tweepy and developing the backend and the front end at the same time which has not only extended my knowledge on the theoretical side but also in technical criteria.</p>
-            <p style="padding-left: 12pt;text-indent: 0pt;line-height: 13pt;text-align: left;">Challenges:</p>
-            <ol id="l10">
-                <li data-list-text="1.">
-                    <p style="padding-left: 48pt;text-indent: -18pt;text-align: left;">Integration of synchronous tasks and asynchronous tasks</p>
-                </li>
-                <li data-list-text="2.">
-                    <p style="padding-left: 48pt;text-indent: -18pt;text-align: left;">Appropriate visualization</p>
-                </li>
-                <li data-list-text="3.">
-                    <p style="padding-left: 48pt;text-indent: -18pt;line-height: 13pt;text-align: left;">Library incompatibilities for instance: Django and Dash</p>
-                </li>
-                <li data-list-text="4.">
-                    <p style="padding-left: 48pt;text-indent: -18pt;line-height: 13pt;text-align: left;">
-                        Challenges in applying techniques for instance preprocessing and cleaning, on Farsi contents such as Persian Social Corpuses and Slang, and
-                        <a href="https://stackoverflow.com/questions/49362300/word-cloud-arabic/57506785#57506785">dealing with unknown characters.</a>
-                    </p>
-                </li>
-            </ol>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: left;">One of the main impacts of this R&amp;D project was that the output dashboard became the main root of other field citations for scientists in economics, sociology, and industrial engineering.</p>
-            <ul id="l11">
-                <li data-list-text="">
-                    <p style="padding-left: 30pt;text-indent: -18pt;text-align: justify;">Contributed to “Performance evaluation of Persian News Agency on Twitter using a combination of Data mining, analytical network analysis (ANP) and data envelopment analysis (DEA)”, published in a domestic journal.</p>
-                </li>
-            </ul>
-        </section>
-        <section id="university">
-            <h2>Researches during MSc, Amirkabir University of Technology, Tehran, Iran</h2>
-            <h3>Thesis</h3>
-            <!-- added 1 -->
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">I analyzed and compared four different models including LIFT, Deep learning (two-layered and three-layered RBMs), and Graph-based models e.g Rank method and Label Propagation consider three different evaluation metrics which are appropriate to assess multi-label classification i.e Accuracy, Hamming Loss, and Average Precision.</p>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">Eventually, I was successful to improve the Label Propagation method which yields better results in Accuracy and Hamming Loss for Genbase, Enron, and Image datasets. The Label Propagation method consists of two main phases:</p>
-            <ol id="l12">
-                <li data-list-text="1.">
-                    <p style="padding-left: 48pt;text-indent: -18pt;text-align: justify;">Preprocessing, and converting scalar data to graph data to shape a network, edges define similarity between nodes, in the following procedure, prunes edges with less pre-defined similarity threshold.</p>
-                </li>
-                <li data-list-text="2.">
-                    <p style="padding-left: 48pt;text-indent: -18pt;text-align: justify;">Adding new un-seen data as a new node to the network, and starting propagation from the node to all other nodes, and in the final state, all propagated nodes will be counted and assigned the winner label to the unseen node.</p>
-                </li>
-            </ol>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">In the suggested approach, to improve results, after the first phase, some extra nodes will be added to the network to balance the whole network.</p>
-            <p style="text-indent: 0pt;text-align: left;">
-                <br>
-            </p>
-            <table style="border-collapse: collapse; margin-left: 11.775pt;" cellspacing="0">
-                <tr style="height: 14pt">
-                    <td style="width: 157pt; border-top: 2pt solid #7E7E7E;">
-                        <p class="s10" style="padding-left: 6pt; text-indent: 0pt; line-height: 12pt; text-align: left;">
-                            Algorithm vs Datasets
-                            <u>&nbsp;&nbsp;&nbsp;</u>
-                        </p>
-                    </td>
-                    <td style="width: 91pt; border-top: 2pt solid #7E7E7E;">
-                        <p style="text-indent: 0pt; text-align: left;">
-                            <br>
-                        </p>
-                    </td>
-                    <td style="width: 109pt; border-top: 2pt solid #7E7E7E;">
-                        <p class="s11" style="padding-left: 131pt; text-indent: 0pt; text-align: left;">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <b>
-                                Accuracy
-                                <span class="s12">
-                                    ↑
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </span>
-                            </b>
-                        </p>
-                    </td>
-                    <td style="width: 79pt; border-top: 2pt solid #7E7E7E;">
-                        <p style="text-indent: 0pt; text-align: left;">
-                            <br>
-                        </p>
-                    </td>
-                    <td style="width: 71pt; border-top: 2pt solid #7E7E7E;">
-                        <p style="text-indent: 0pt; text-align: left;">
-                            <br>
-                        </p>
-                    </td>
-                </tr>
-                <!-- ... (rest of the table remains unchanged) ... -->
-                <tr style="height:12pt">
-                    <td style="width:157pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p style="text-indent: 0pt;text-align: left;">
-                            <br>
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            Genbase
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 31pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Yeast</p>
-                    </td>
-                    <td style="width:79pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 17pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Enron</p>
-                    </td>
-                    <td style="width:71pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 9pt;text-indent: 0pt;line-height: 11pt;text-align: right;">Image</p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">LIFT</p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            0.982
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 28pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.5194</p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            <b>0.3497</b>
-                        </p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">0.4356</p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            Three-layered
-                        RBM
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            0.0089
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 28pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.4566</p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 16pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.3072</p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">0.3653</p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            Propagation
-                        with extra nodes
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            <b>0.9933</b>
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 31pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            <b>0.541</b>
-                        </p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 16pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.3269</p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">
-                            <b>0.4403</b>
-                        </p>
-                    </td>
-                </tr>
-                <tr style="height:26pt">
-                    <td style="width:507pt;border-top-style:solid;border-top-width:2pt;border-top-color:#7E7E7E" colspan="5">
-                        <p style="text-indent: 0pt;text-align: left;">
-                            <br>
-                        </p>
-                        <p class="s11" style="padding-left: 131pt;text-indent: 0pt;text-align: left;">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <b>
-                                Average Precision
-                                <span class="s12">
-                                    ↑
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </span>
-                            </b>
-                        </p>
-                    </td>
-                </tr>
-                <tr style="height:12pt">
-                    <td style="width:157pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p style="text-indent: 0pt;text-align: left;">
-                            <br>
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            Genbase
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 31pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Yeast</p>
-                    </td>
-                    <td style="width:79pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 17pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Enron</p>
-                    </td>
-                    <td style="width:71pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 9pt;text-indent: 0pt;line-height: 11pt;text-align: right;">Image</p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">LIFT</p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-right: 1pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            <b>1</b>
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 28pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            <b>0.7241</b>
-                        </p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            <b>0.6492</b>
-                        </p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-right: 10pt;text-indent: 0pt;line-height: 11pt;text-align: right;">
-                            <b>0.475</b>
-                        </p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            Three-layered
-                        RBM
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            0.0201
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 28pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.7003</p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 16pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.5315</p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">0.4001</p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            Propagation
-                        with extra nodes
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-right: 1pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            <b>1</b>
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 31pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.659</p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 18pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.571</p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">0.4746</p>
-                    </td>
-                </tr>
-                <tr style="height:26pt">
-                    <td style="width:507pt;border-top-style:solid;border-top-width:2pt;border-top-color:#7E7E7E" colspan="5">
-                        <p style="text-indent: 0pt;text-align: left;">
-                            <br>
-                        </p>
-                        <p class="s11" style="padding-left: 131pt;text-indent: 0pt;text-align: left;">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <b>
-                                Hamming Loss
-                                <span class="s12">
-                                    ↓
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </span>
-                            </b>
-                        </p>
-                    </td>
-                </tr>
-                <tr style="height:12pt">
-                    <td style="width:157pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p style="text-indent: 0pt;text-align: left;">
-                            <br>
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            Genbase
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 31pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Yeast</p>
-                    </td>
-                    <td style="width:79pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 17pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Enron</p>
-                    </td>
-                    <td style="width:71pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 9pt;text-indent: 0pt;line-height: 11pt;text-align: right;">Image</p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">LIFT</p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            0.0016
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 28pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            <b>0.1913</b>
-                        </p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 16pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.3319</p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-right: 10pt;text-indent: 0pt;line-height: 11pt;text-align: right;">
-                            <b>0.186</b>
-                        </p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            Three-layered
-                        RBM
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            0.045
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 28pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.2131</p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 16pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.0595</p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">0.2155</p>
-                    </td>
-                </tr>
-                <tr style="height:13pt">
-                    <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 6pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            Propagation
-                        with extra nodes
-                        </p>
-                    </td>
-                    <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 26pt;padding-right: 28pt;text-indent: 0pt;line-height: 11pt;text-align: center;">
-                            <b>0.0005</b>
-                        </p>
-                    </td>
-                    <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-left: 31pt;text-indent: 0pt;line-height: 11pt;text-align: left;">0.208</p>
-                    </td>
-                    <td style="width:79pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s10" style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                            <b>0.0581</b>
-                        </p>
-                    </td>
-                    <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7E7E7E;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7E7E7E">
-                        <p class="s13" style="padding-right: 7pt;text-indent: 0pt;line-height: 11pt;text-align: right;">0.2176</p>
-                    </td>
-                </tr>
-            </table>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">In a nutshell, it is considerably conspicuous that the LIFT technique had better results for the Average Precision metric for all datasets, but Propagation with extra nodes approach showed better results in Accuracy Criteria for all datasets except Enron, and better Hamming Loss for Genbase and Enron datasets.</p>
-            <p style="padding-left: 48pt;text-indent: 0pt;line-height: 13pt;text-align: justify;">
-                Used Technologies:
-                <span class="h3">Python – Matplotlib – Matlab – Scikit-learn</span>
-            </p>
-            <p style="text-indent: 0pt;text-align: left;">
-                <br>
-            </p>
-            <h3>Algorithms for Complex Networks</h3>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: left;">Implementation and Analysis of different algorithms and measures over complex networks “Page-Rank classification, Label Propagation Classification, Diameters, Closeness, Community Detection, etcetera”.</p>
-            <p style="padding-left: 48pt;text-indent: 0pt;text-align: left;">
-                Used Technologies:
-                <span class="h3">Python – Matplotlib – Matlab – NetworkX</span>
-            </p>
-            <p style="text-indent: 0pt;text-align: left;">
-                <br>
-            </p>
-            <h3>Digital Image Processing</h3>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: left;">Implementation and Analyzing “A Novel image segmentation algorithm based on neutrosophic similarity clustering”.</p>
-            <p style="padding-left: 48pt;text-indent: 0pt;text-align: left;">
-                Used Technologies:
-                <span class="h3">Matlab – Matlab-GUI</span>
-            </p>
-            <p style="text-indent: 0pt;text-align: left;">
-                <br>
-            </p>
-            <h3>Neural Network</h3>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: left;">Analyzing and Implementation some popular networks e.g Jordan, Cascade Networks, and SOM (Self-Organizing maps) from scratch with parameter customization abilities without using any well-known libraries.</p>
-            <p style="padding-left: 48pt;text-indent: 0pt;text-align: left;">
-                Used Technologies:
-                <span class="h3">Python – Matlab – Matplotlib</span>
-            </p>
-            <!-- end of added 1 -->
-        </section>
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            <p>
-                <strong>Senior Back-End Developer at Setflow (an Italian startup based in Milan Italy), Tehran, Iran</strong>
-            </p>
-            <p>From: Feb, 2020</p>
-            <ul>
-                <li>Developing and implementing services using Golang and MongoDB.</li>
-                <li>Designing APIs and coordinating protocols between the back-end and front-end teams.</li>
-                <li>
-                    Project:
-                    <a href="https://ai.setflow.io" target="_blank">AI.Setflow</a>
-                </li>
-                <li>As a member of the back-end team, I develop and implement services by using Golang, and MongoDB as</li>
-                <li>database, I also design APIs and coordinate protocols between back-end team and front-end team. Used Technologies:</li>
-                <li>
-                    <span class="s10">Golang – Fiber – Docker – RESTful APIs – Microservice – MongoDB – Git – Jira</span>
-                </li>
-            </ul>
-            <!-- FULL saas -->
-            <p>
-                <strong>Full Stack Developer (A SAAS project, A Freelance Project), Tehran, Iran</strong>
-            </p>
-            <p>From: July, 2021 to: Sep, 2022</p>
-            <ul>
-                <li>Developing and implementing services using Golang and MongoDB.</li>
-                <li>Designing APIs and coordinating protocols between the back-end and front-end teams.</li>
-                <li>
-                    A GIS platform to establish a B2C business scheme, and I have worked near a year on this project to achieve a
-                </li>
-                <li>minimum viable product. In this special project, I have done all developments not only on the back-end side but also on the front-end side.</li>
-                <li>Used Technologies:</li>
-                <li>
-                    <span class="s10">Python – Django – PostgreSQL – RESTful APIs – Unit Test – Docker – Celery – Redis – Github</span>
-                </li>
-            </ul>
-        </section>
-        <section id="software">
-            <h2>Software</h2>
-            <ul>
-                <li>
-                    <p>
-                       1- Our product in <a href="https://ai.setflow.io">Setflow</a> helps Content creators, Art Directors, and Creative Directors to have multiple choices in photography, in just a few
-                    clicks through our platform.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        2- As personal achievements, I have reached a good level of self-confidence in confronting struggles in unknown technical areas, besides, 
-                    I developed and published an open-source library to tackle the lack of JWT with different expiry times in Django which is downloadable from
-                        <a href="https://github.com/benyaamin/simplejwt_multisessions" class="s3" target="_blank">GitHub</a>
-                        , moreover, it is installable 
-                    with
-                        <a href="https://pypi.org/project/simplejwt-multisessions/" class="s2" target="_blank">pip</a>
-                        command, and also has been utterly
-                        <a href="https://pypi.org/project/simplejwt-multisessions/" class="s2" target="_blank">documented</a>
-                        .
-                    </p>
-                </li>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:benyamin.eb@gmail.com" style="margin: 0 0 0 10px;">benyamin.eb@gmail.com</a>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/ben-eb/" style="margin: 0 0 0 10px;">LinkedIn</a>
+            </div>
+        </div>
+    </header>
 
-                <li>
-                    <p>
-                        3- Since one of my interests in my free time is playing with ML Algorithms applied to real-world data, and developing software
-                        I have worked with different Time Series Prediction models and also tried to 
-                        design an Automated Trading Service Schema including three different services such as:
-                        <ul>
-                            <li>
-                                a. Data Gathering Service
-                            </li>
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <table>
+            <tr>
+                <td>MSc of Artificial Intelligence at Amirkabir University of Technology</td>
+                <td>Tehran, Iran - Oct, 2018</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Thesis: Multilabel Classification Focusing on Biology Dataset<br>
+                    Supervisor: Dr. Maryam A. Haeri
+                </td>
+            </tr>
+            <tr>
+                <td>BSc of Computer Engineering at IAU</td>
+                <td>Tehran, Iran - Sep, 2014</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Thesis: Human Mobile Interaction on iOS Devices<br>
+                    Supervisor: Dr. Nima Shahbazi
+                </td>
+            </tr>
+        </table>
+    </section>
 
-                            <li>
-                                b. Predictor Service
-                            </li>
-                            <li>
-                                c. Trader Service
-                            </li>
-                        </ul>
-                        The first service is suppose to gather and store the real-time market info from a reliable market in my case Kucoin, into a Database
-                        which after multiple days gave its place to a cache system in this case Redis was the best choice.
-                        <br/>
-                        In the second Service, I tried to tune a model to predict several steps ahead of us, with a fixed interval of time. This phase of 
-                        the project was the most cumbersome part of the project. At the end of trying different models, finally I've tried to work with 
-                        LSTM then I spent many hours applying recursiveness ability to the LSTM model.
-                        <br/>
-                        I am working on publishing the model on GitHub as soon as possible or at least publishing its notebook in GitHub with
-                        samples of the dataset that I have stored from the API. So people can see what I have done with the LSTM and be
-                        able to play with the model to test their assumptions.
-                    </p>
-                </li>
-            </ul>
-        </section>
-        <section id="skills">
-            <h2>Skills & Interests</h2>
-            <p>
-                <strong>Programming:</strong>
-                Python (numpy, pandas, scikit-learn, NetworkX, Pytorch, Django, Tweepy, Plotly, Dash, Matplotlib), Swift (XCode, CoreData), Matlab, ReactJS (Axios, RESTful APIs, Openstreet map, JSX), GoLang (GoFiber), Microservice, Docker, Celery, Redis, MongoDB, Github, MacOS, Ubuntu
-            </p>
-            <p>
-                <strong>Skills:</strong>
-                Machine Learning, GAN Networks, Social Networks, Complex Networks, Digital Image Processing
-            </p>
-            <p style="padding-left: 12pt;text-indent: 0pt;text-align: justify;">I am considerably keen on R&amp;D projects which include designing machine learning models, especially GAN networks that apply in complex network applications ranging from social networks, communication, and transaction to biomedicine.</p>
-        </section>
-                <section id="Hobbies">
-                    <h2>Hobbies</h2>
-                    <p>
-                        <strong>Movies:</strong>
-                        I look forward to seeing the box office's latest news about movies, directors, and actors latest news. There are some
-                        names that I check their IMDB profiles some time to time, to see what are they up to. I'm keen to know how and why a
-                        special scene is made, and like to talk or give a review about the story behind the movies. As I said earlier I am not a
-                        man who only follows big names but there are names that I pursue including David Fincher, Christopher Nolan, Denis
-                        Villeneuve, etc. My current top 3 are Interstellar, La-La Land, and Uncut Gems.
-                    </p>
-                    <p>
-                        <strong>Running:</strong>
-                        If I am in the mood I like to run no matter what time of the day it is! I like to run outdoors, but unfortunately
-                        lately keeping a daily or weekly routine is not that easy :D, who knows maybe someday I will get the chance to run in a Marathon.
-                    </p>
-                </section>
-        <footer>
-            <p>&copy; 2023 Benyamin Agha Ebrahimi</p>
-        </footer>
-        <!-- "Move to Top" button -->
-        <!-- <button id="moveToTop" onclick="scrollToTop()"><i class="fa-solid fa-up" style="font-size: 24px;"></i>Move to Top</button> -->
-        <button id="moveToTop" onclick="scrollToTop()">
-            <!-- <div style="display: flex; align-items: center; margin-bottom: 0px;"> -->
-                <!-- <i class="fa-duotone fa-up" style="font-size: 24px;"></i> -->
-                <!-- <i class="fa-solid fa-up" style="font-size: 24px;"></i> -->
-                <i class="fa-solid fa-chevron-up" style="font-size: 24px;"></i>
-            <!-- </div> -->
+    <!-- Research Experience Section -->
+    <section id="research">
+        <h2>Research Experience</h2>
+        <p><strong>Social Network Researcher at Naazer, Tehran, Iran</strong></p>
+        <p>From: Feb, 2018 to: Apr, 2020</p>
+        <p>
+            A R&D interdisciplinary project ranging from sociology, politics, and computer engineering to artificial intelligence 
+            in order to produce a dashboard that facilitates gaining a variety of insights from the Persian community on 
+            <strong>Twitter</strong> such as:
+        </p>
+        <ul>
+            <li>Trends</li>
+            <li>Topic Influencers</li>
+            <li>Community Detection</li>
+            <li>Topic Conflicts</li>
+            <li>Heat Map of Trends</li>
+            <li>Cloud words of a specific day or a time window</li>
+        </ul>
+        <p>The output dashboard included three main traits as:</p>
+        <ul>
+            <li>Daily Analysis</li>
+            <li>User-based Analysis</li>
+            <li>Real-Time Analysis</li>
+        </ul>
+        <p>
+            At the beginning of the project, this platform was able to handle 40K Persian tweets but eventually reached to store 
+            and analyze 1.5M Persian tweets per day from 8th Aug 2018 to 4th Apr 2019.
+        </p>
+        <p>Used Technologies:</p>
+        <ul>
+            <li>Data Side: Python, Tweepy, Scipy, Numpy, Pandas, Scikit-Learn</li>
+            <li>Back-End Side: Python, Django, MongoDB, Celery</li>
+            <li>Front-End Side: Python, Plotly, Dash, HTML, Matplotlib</li>
+        </ul>
+        <p>
+            My role as a Social Network Researcher was to come up with the best strategies and models to grasp the insight from 
+            the Twitter data including Information Retrieval Techniques, Complex Network Algorithms such as community detection 
+            and NLP methods, and Topic Modeling which resulted in a robust hybrid technique. Moreover, I had to design the most 
+            proper way to visualize the gathered data in different ways ranging from Time Series, Pie Charts, and Heat Maps for 
+            influencers/Trends vs dates, to cloud words in order to properly depict the insight. Fortunately, this opportunity 
+            broadened my responsibilities from designing to implementing the crawler itself by using Tweepy and developing the 
+            backend and the front end at the same time, which not only extended my knowledge on the theoretical side but also in 
+            technical criteria.
+        </p>
+        <p>Challenges:</p>
+        <ol>
+            <li>Integration of synchronous tasks and asynchronous tasks</li>
+            <li>Appropriate visualization</li>
+            <li>Library incompatibilities for instance: Django and Dash</li>
+            <li>Challenges in applying techniques for instance preprocessing and cleaning on Farsi contents such as Persian 
+                Social Corpuses and Slang, and dealing with unknown characters.
+            </li>
+        </ol>
+        <p>
+            One of the main impacts of this R&D project was that the output dashboard became the main root of other field 
+            citations for scientists in economics, sociology, and industrial engineering.
+        </p>
+        <ul>
+            <li>Contributed to “Performance evaluation of Persian News Agency on Twitter using a combination of Data mining, 
+                analytical network analysis (ANP) and data envelopment analysis (DEA)”, published in a domestic journal.
+            </li>
+        </ul>
+    </section>
 
-        </button> 
-        <script>
+    <!-- University Research Section -->
+    <section id="university">
+        <h2>Researches during MSc, Amirkabir University of Technology, Tehran, Iran</h2>
+        <h3>Thesis</h3>
+        <p>
+            I analyzed and compared four different models including LIFT, Deep learning (two-layered and three-layered RBMs), 
+            and Graph-based models e.g Rank method and Label Propagation consider three different evaluation metrics which are 
+            appropriate to assess multi-label classification i.e Accuracy, Hamming Loss, and Average Precision.
+        </p>
+        <p>
+            Eventually, I was successful in improving the Label Propagation method which yielded better results in Accuracy and 
+            Hamming Loss for Genbase, Enron, and Image datasets. The Label Propagation method consists of two main phases:
+        </p>
+        <ol>
+            <li>
+                Preprocessing, and converting scalar data to graph data to shape a network, edges define similarity between 
+                nodes, in the following procedure, prunes edges with less pre-defined similarity threshold.
+            </li>
+            <li>
+                Adding new unseen data as a new node to the network, and starting propagation from the node to all other nodes, 
+                and in the final state, all propagated nodes will be counted and assigned the winner label to the unseen node.
+            </li>
+        </ol>
+        <p>
+            In the suggested approach, to improve results, after the first phase, some extra nodes will be added to the network 
+            to balance the whole network.
+        </p>
+        <table>
+            <tr>
+                <th>Algorithm vs Datasets</th>
+                <th>Genbase</th>
+                <th>Yeast</th>
+                <th>Enron</th>
+                <th>Image</th>
+            </tr>
+            <tr>
+                <td>LIFT</td>
+                <td>0.982</td>
+                <td>0.5194</td>
+                <td>0.3497</td>
+                <td>0.4356</td>
+            </tr>
+            <tr>
+                <td>Three-layered RBM</td>
+                <td>0.0089</td>
+                <td>0.4566</td>
+                <td>0.3072</td>
+                <td>0.3653</td>
+            </tr>
+            <tr>
+                <td>Propagation with extra nodes</td>
+                <td>0.9933</td>
+                <td>0.541</td>
+                <td>0.3269</td>
+                <td>0.4403</td>
+            </tr>
+        </table>
+        <p>
+            In a nutshell, it is considerably conspicuous that the LIFT technique had better results for the Average Precision 
+            metric for all datasets, but Propagation with extra nodes approach showed better results in Accuracy Criteria for 
+            all datasets except Enron, and better Hamming Loss for Genbase and Enron datasets.
+        </p>
+        <p>Used Technologies: Python, Matplotlib, Matlab, Scikit-learn</p>
+        <h3>Algorithms for Complex Networks</h3>
+        <p>
+            Implementation and Analysis of different algorithms and measures over complex networks “Page-Rank classification, 
+            Label Propagation Classification, Diameters, Closeness, Community Detection, etcetera”.
+        </p>
+        <p>Used Technologies: Python, Matplotlib, Matlab, NetworkX</p>
+        <h3>Digital Image Processing</h3>
+        <p>Implementation and Analyzing “A Novel image segmentation algorithm based on neutrosophic similarity clustering”.</p>
+        <p>Used Technologies: Matlab, Matlab-GUI</p>
+        <h3>Neural Network</h3>
+        <p>
+            Analyzing and Implementation of some popular networks e.g Jordan, Cascade Networks, and SOM (Self-Organizing maps) 
+            from scratch with parameter customization abilities without using any well-known libraries.
+        </p>
+        <p>Used Technologies: Python, Matlab, Matplotlib</p>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <p><strong>Senior Back-End Developer at Setflow (an Italian startup based in Milan Italy), Tehran, Iran</strong></p>
+        <p>From: Feb, 2020</p>
+        <ul>
+            <li>Developing and implementing services using Golang and MongoDB.</li>
+            <li>Designing APIs and coordinating protocols between the back-end and front-end teams.</li>
+            <li>Project: <a href="https://ai.setflow.io" target="_blank">AI.Setflow</a></li>
+            <li>
+                As a member of the back-end team, I develop and implement services by using Golang, and MongoDB as a database, 
+                I also design APIs and coordinate protocols between the back-end team and front-end team.
+            </li>
+            <li>Used Technologies: Golang, Fiber, Docker, RESTful APIs, Microservice, MongoDB, Git, Jira</li>
+        </ul>
+        <p><strong>Full Stack Developer (A SAAS project, A Freelance Project), Tehran, Iran</strong></p>
+        <p>From: July, 2021 to: Sep, 2022</p>
+        <ul>
+            <li>Developing and implementing services using Golang and MongoDB.</li>
+            <li>Designing APIs and coordinating protocols between the back-end and front-end teams.</li>
+            <li>
+                A GIS platform to establish a B2C business scheme, and I have worked near a year on this project to achieve a 
+                minimum viable product. In this special project, I have done all developments not only on the back-end side but 
+                also on the front-end side.
+            </li>
+            <li>Used Technologies: Python, Django, PostgreSQL, RESTful APIs, Unit Test, Docker, Celery, Redis, Github</li>
+        </ul>
+    </section>
+
+    <!-- Software Section -->
+    <section id="software">
+        <h2>Software</h2>
+        <ul>
+            <li>
+                Our product in <a href="https://ai.setflow.io">Setflow</a> helps Content creators, Art Directors, and Creative 
+                Directors to have multiple choices in photography, in just a few clicks through our platform.
+            </li>
+            <li>
+                As personal achievements, I have reached a good level of self-confidence in confronting struggles in unknown 
+                technical areas, besides, I developed and published an open-source library to tackle the lack of JWT with 
+                different expiry times in Django which is downloadable from 
+                <a href="https://github.com/benyaamin/simplejwt_multisessions" class="s3" target="_blank">GitHub</a>, moreover, 
+                it is installable with 
+                <a href="https://pypi.org/project/simplejwt-multisessions/" class="s2" target="_blank">pip</a> command, and also 
+                has been utterly 
+                <a href="https://pypi.org/project/simplejwt-multisessions/" class="s2" target="_blank">documented</a>.
+            </li>
+            <li>
+                Since one of my interests in my free time is playing with ML Algorithms applied to real-world data, and 
+                developing software, I have worked with different Time Series Prediction models and also tried to design an 
+                Automated Trading Service Schema including three different services such as:
+                <ul>
+                    <li>Data Gathering Service</li>
+                    <li>Predictor Service</li>
+                    <li>Trader Service</li>
+                </ul>
+                The first service is supposed to gather and store the real-time market info from a reliable market in my case 
+                Kucoin, into a Database which after multiple days gave its place to a cache system in this case Redis was the 
+                best choice. In the second Service, I tried to tune a model to predict several steps ahead of us, with a fixed 
+                interval of time. This phase of the project was the most cumbersome part of the project. At the end of trying 
+                different models, finally I've tried to work with LSTM then I spent many hours applying recursiveness ability to 
+                the LSTM model.
+                <br>
+                I am working on publishing the model on GitHub as soon as possible or at least publishing its notebook in GitHub 
+                with samples of the dataset that I have stored from the API. So people can see what I have done with the LSTM and 
+                be able to play with the model to test their assumptions.
+            </li>
+        </ul>
+    </section>
+
+    <!-- Skills & Interests Section -->
+    <section id="skills">
+        <h2>Skills & Interests</h2>
+        <p><strong>Programming:</strong> Python (numpy, pandas, scikit-learn, NetworkX, Pytorch, Django, Tweepy, Plotly, Dash, Matplotlib), Swift (XCode, CoreData), Matlab, ReactJS (Axios, RESTful APIs, Openstreet map, JSX), GoLang (GoFiber), Microservice, Docker, Celery, Redis, MongoDB, Github, MacOS, Ubuntu</p>
+        <p><strong>Skills:</strong> Machine Learning, GAN Networks, Social Networks, Complex Networks, Digital Image Processing</p>
+        <p>
+            I am considerably keen on R&D projects which include designing machine learning models, especially GAN networks that 
+            apply in complex network applications ranging from social networks, communication, and transaction to biomedicine.
+        </p>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <p>
+            <strong>Movies:</strong> I look forward to seeing the box office's latest news about movies, directors, and actors' 
+            latest news. There are some names that I check their IMDB profiles from time to time, to see what they are up to. I'm 
+            keen to know how and why a special scene is made, and like to talk or give a review about the story behind the movies. 
+            As I said earlier I am not a man who only follows big names but there are names that I pursue including David Fincher, 
+            Christopher Nolan, Denis Villeneuve, etc. My current top 3 are Interstellar, La-La Land, and Uncut Gems.
+        </p>
+        <p>
+            <strong>Running:</strong> If I am in the mood I like to run no matter what time of the day it is! I like to run 
+            outdoors, but unfortunately, lately keeping a daily or weekly routine is not that easy :D, who knows maybe someday I 
+            will get the chance to run in a Marathon.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Benyamin Agha Ebrahimi</p>
+    </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="moveToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
         // Show/hide "Move to Top" button based on scroll position
         window.onscroll = function () {
-            showMoveToTopButton();
-        };
-
-        function showMoveToTopButton() {
             var button = document.getElementById("moveToTop");
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 button.style.display = "block";
             } else {
                 button.style.display = "none";
             }
-        }
+        };
 
         // Scroll to the top when the button is clicked
         function scrollToTop() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
-        </script>
-        <script src="https://kit.fontawesome.com/b638c1d75a.js" crossorigin="anonymous"></script>
-    </body>
+    </script>
+    <script src="https://kit.fontawesome.com/b638c1d75a.js" crossorigin="anonymous"></script>
+</body>
 </html>
