@@ -76,6 +76,24 @@
             line-height: 1.6;
         }
 
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -118,13 +136,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#education">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#research">Research</a>
+                        <a class="nav-link" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link" href="#research">Research</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#skills">Skills</a>
@@ -140,11 +161,20 @@
     <header>
         <div class="container">
             <h1>Benyamin Agha Ebrahimi</h1>
-            <p>Artificial Intelligence | Applied Machine Learning | Software Developer | R&D @ Setflow</p>
-            <!-- <img src="src/images/photo_2024-04-16_16-44-11 2.jpg" alt="Ben's Profile Picture" class="profile-picture"> -->
-            <img src="src/images/2024-09-07 22.26.21.jpg" alt="Ben's Profile Picture" class="profile-picture">
+            <p>Senior Backend Engineer | AI Specialist | Cloud Storage Architect | Golang Developer</p>
+            <img src="src/images/your_image.jpg" alt="Ben's Profile Picture" class="profile-picture">
         </div>
     </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am an experienced software engineer with over 12 years of programming expertise, specializing in
+                backend development, cloud storage solutions, and applied AI. I have successfully delivered scalable and
+                secure systems, including a cloud storage service similar to BOX. My expertise spans Python, Golang, and
+                Objective-C, with a deep understanding of microservices architecture and AI-driven systems.</p>
+        </div>
+    </section>
 
     <section id="education" class="section">
         <div class="container">
@@ -168,7 +198,7 @@
 
     <section id="research" class="section">
         <div class="container">
-            <h2>Research Experience</h2>
+            <h2>Research Experience & MSc Thesis</h2>
             <div class="row">
                 <div class="col-lg-12">
                     <h3>Social Network Researcher</h3>
@@ -182,19 +212,14 @@
                         MongoDB, Celery, Plotly, Dash, Matplotlib</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="research-results" class="section">
-        <div class="container">
-            <h2>Research Results: MSc Thesis</h2>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>In my MSc thesis, I analyzed and compared four different models for multi-label classification:
-                        LIFT, Deep Learning (RBMs), and Graph-based models. I focused on evaluating these models using
-                        metrics like Accuracy, Hamming Loss, and Average Precision.</p>
-                    <p>Here are the key results:</p>
-                    <table class="table table-bordered">
+                    <h3>MSc Thesis: Multilabel Classification</h3>
+                    <p>I analyzed and compared four different models for multi-label classification: LIFT, RBMs, and
+                        Graph-based models. The analysis was based on Accuracy, Hamming Loss, and Average Precision
+                        metrics. Below are the results of the different models tested on various datasets:</p>
+
+                    <table>
                         <thead>
                             <tr>
                                 <th>Algorithm</th>
@@ -228,9 +253,9 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p>Overall, the LIFT technique showed the best results for the Average Precision metric across all
-                        datasets. However, the Propagation with extra nodes approach outperformed in Accuracy for all
-                        datasets except Enron and showed better Hamming Loss for Genbase and Enron datasets.</p>
+
+                    <p>The LIFT technique had the best results for the Average Precision metric, while the Propagation
+                        with extra nodes approach showed better Accuracy and Hamming Loss for most datasets.</p>
                     <p><strong>Technologies Used:</strong> Python, Matplotlib, Matlab, Scikit-learn</p>
                 </div>
             </div>
@@ -246,23 +271,19 @@
                     <p><strong>Setflow, Tehran, Iran</strong> | Feb 2020 - Present</p>
                     <ul>
                         <li>Designed and developed scalable back-end services using Golang and MongoDB.</li>
-                        <li>Led API design and integration efforts between front-end and back-end teams.</li>
-                        <li>Contributed to <a href="https://ai.setflow.io" target="_blank">AI.Setflow</a>, enhancing its
-                            capabilities.</li>
+                        <li>Led API design and integration efforts for AI.Setflow (https://ai.setflow.io).</li>
                     </ul>
-                    <p><strong>Technologies Used:</strong> Golang, Fiber, Docker, RESTful APIs, Microservice, MongoDB,
-                        Git, Jira</p>
+                    <p><strong>Technologies Used:</strong> Golang, Fiber, Docker, RESTful APIs, Microservices, MongoDB
+                    </p>
                 </div>
                 <div class="col-lg-6">
-                    <h3>Full Stack Developer</h3>
-                    <p><strong>Freelance SAAS Project, Tehran, Iran</strong> | July 2021 - Sep 2022</p>
+                    <h3>Cloud Storage Architect (Similar to BOX)</h3>
+                    <p><strong>Independent Project</strong></p>
                     <ul>
-                        <li>Developed and implemented a GIS platform for a B2C business.</li>
-                        <li>Handled both back-end and front-end development tasks, ensuring seamless integration.</li>
-                        <li>Designed RESTful APIs and managed databases using Django and PostgreSQL.</li>
+                        <li>Developed a cloud storage system with features comparable to BOX.</li>
+                        <li>Handled large-scale data storage, ensuring high reliability and security.</li>
                     </ul>
-                    <p><strong>Technologies Used:</strong> Python, Django, PostgreSQL, RESTful APIs, Unit Test, Docker,
-                        Celery, Redis, Github</p>
+                    <p><strong>Technologies Used:</strong> Python, Golang, Docker, MongoDB</p>
                 </div>
             </div>
         </div>
@@ -270,18 +291,11 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h2>Skills & Interests</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Programming Languages & Tools</h3>
-                    <p>Python, Swift, Matlab, ReactJS, GoLang, Docker, Celery, Redis, MongoDB, Github</p>
-                    <h3>Key Skills</h3>
-                    <p>Machine Learning, Social Networks, Complex Networks, Digital Image Processing</p>
-                    <h3>Interests</h3>
-                    <p>Engaging in research-driven projects, particularly those involving machine learning, AI, and
-                        their applications in various fields.</p>
-                </div>
-            </div>
+            <h2>Skills</h2>
+            <p><strong>Programming Languages & Tools:</strong> Python, Swift, Golang, Docker, Celery, Redis, MongoDB,
+                Django, ReactJS</p>
+            <p><strong>Key Skills:</strong> Backend Development, Cloud Storage, Microservices Architecture, Machine
+                Learning, Data Security</p>
         </div>
     </section>
 
@@ -299,8 +313,8 @@
 
     <footer>
         <div class="container footer-links">
+            <a href="#about">About</a> |
             <a href="#education">Education</a> |
-            <a href="#research">Research</a> |
             <a href="#experience">Experience</a> |
             <a href="#skills">Skills</a> |
             <a href="#contact">Contact</a>
