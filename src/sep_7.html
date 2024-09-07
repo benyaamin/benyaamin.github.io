@@ -118,10 +118,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Me</a>
+                        <a class="nav-link" href="#education">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
+                        <a class="nav-link" href="#research">Research</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#experience">Experience</a>
@@ -140,20 +140,11 @@
     <header>
         <div class="container">
             <h1>Benyamin Agha Ebrahimi</h1>
-            <p>Senior Backend Engineer | AI Specialist | Cloud Storage Architect | Golang Developer</p>
-            <img src="src/images/your_image.jpg" alt="Ben's Profile Picture" class="profile-picture">
+            <p>Artificial Intelligence | Applied Machine Learning | Software Developer | R&D @ Setflow</p>
+            <!-- <img src="src/images/photo_2024-04-16_16-44-11 2.jpg" alt="Ben's Profile Picture" class="profile-picture"> -->
+            <img src="src/images/2024-09-07 22.26.21.jpg" alt="Ben's Profile Picture" class="profile-picture">
         </div>
     </header>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am an experienced software engineer with over 12 years of programming expertise, specializing in
-                backend development, cloud storage solutions, and applied AI. I have successfully delivered scalable and
-                secure systems, including a cloud storage service similar to BOX. My expertise spans Python, Golang, and
-                Objective-C, with a deep understanding of microservices architecture and AI-driven systems.</p>
-        </div>
-    </section>
 
     <section id="education" class="section">
         <div class="container">
@@ -175,6 +166,77 @@
         </div>
     </section>
 
+    <section id="research" class="section">
+        <div class="container">
+            <h2>Research Experience</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Social Network Researcher</h3>
+                    <p><strong>Naazer, Tehran, Iran</strong> | Feb 2018 - Apr 2020</p>
+                    <ul>
+                        <li>Conducted interdisciplinary R&D to develop a dashboard analyzing Persian Twitter data.</li>
+                        <li>Specialized in trends analysis, community detection, and influencer identification.</li>
+                        <li>Scaled platform capabilities from 40K to 1.5M tweets per day.</li>
+                    </ul>
+                    <p><strong>Technologies Used:</strong> Python, Tweepy, Scipy, Numpy, Pandas, Scikit-Learn, Django,
+                        MongoDB, Celery, Plotly, Dash, Matplotlib</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research-results" class="section">
+        <div class="container">
+            <h2>Research Results: MSc Thesis</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>In my MSc thesis, I analyzed and compared four different models for multi-label classification:
+                        LIFT, Deep Learning (RBMs), and Graph-based models. I focused on evaluating these models using
+                        metrics like Accuracy, Hamming Loss, and Average Precision.</p>
+                    <p>Here are the key results:</p>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Algorithm</th>
+                                <th>Genbase (Accuracy)</th>
+                                <th>Yeast (Accuracy)</th>
+                                <th>Enron (Accuracy)</th>
+                                <th>Image (Accuracy)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LIFT</td>
+                                <td>0.982</td>
+                                <td>0.5194</td>
+                                <td>0.3497</td>
+                                <td>0.4356</td>
+                            </tr>
+                            <tr>
+                                <td>Three-layered RBM</td>
+                                <td>0.0089</td>
+                                <td>0.4566</td>
+                                <td>0.3072</td>
+                                <td>0.3653</td>
+                            </tr>
+                            <tr>
+                                <td>Propagation with extra nodes</td>
+                                <td>0.9933</td>
+                                <td>0.541</td>
+                                <td>0.3269</td>
+                                <td>0.4403</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Overall, the LIFT technique showed the best results for the Average Precision metric across all
+                        datasets. However, the Propagation with extra nodes approach outperformed in Accuracy for all
+                        datasets except Enron and showed better Hamming Loss for Genbase and Enron datasets.</p>
+                    <p><strong>Technologies Used:</strong> Python, Matplotlib, Matlab, Scikit-learn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="experience" class="section">
         <div class="container">
             <h2>Professional Experience</h2>
@@ -184,18 +246,23 @@
                     <p><strong>Setflow, Tehran, Iran</strong> | Feb 2020 - Present</p>
                     <ul>
                         <li>Designed and developed scalable back-end services using Golang and MongoDB.</li>
-                        <li>Led API design and integration efforts for AI.Setflow.</li>
+                        <li>Led API design and integration efforts between front-end and back-end teams.</li>
+                        <li>Contributed to <a href="https://ai.setflow.io" target="_blank">AI.Setflow</a>, enhancing its
+                            capabilities.</li>
                     </ul>
-                    <p><strong>Technologies Used:</strong> Golang, Docker, RESTful APIs, Microservices, MongoDB</p>
+                    <p><strong>Technologies Used:</strong> Golang, Fiber, Docker, RESTful APIs, Microservice, MongoDB,
+                        Git, Jira</p>
                 </div>
                 <div class="col-lg-6">
-                    <h3>Cloud Storage Architect (Similar to BOX)</h3>
-                    <p><strong>Independent Project</strong></p>
+                    <h3>Full Stack Developer</h3>
+                    <p><strong>Freelance SAAS Project, Tehran, Iran</strong> | July 2021 - Sep 2022</p>
                     <ul>
-                        <li>Developed a cloud storage system with features comparable to BOX.</li>
-                        <li>Handled large-scale data storage, ensuring high reliability and security.</li>
+                        <li>Developed and implemented a GIS platform for a B2C business.</li>
+                        <li>Handled both back-end and front-end development tasks, ensuring seamless integration.</li>
+                        <li>Designed RESTful APIs and managed databases using Django and PostgreSQL.</li>
                     </ul>
-                    <p><strong>Technologies Used:</strong> Python, Golang, Docker, MongoDB</p>
+                    <p><strong>Technologies Used:</strong> Python, Django, PostgreSQL, RESTful APIs, Unit Test, Docker,
+                        Celery, Redis, Github</p>
                 </div>
             </div>
         </div>
@@ -203,27 +270,37 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h2>Skills</h2>
-            <p><strong>Programming Languages & Tools:</strong> Python, Swift, Golang, Docker, Celery, Redis, MongoDB,
-                Django, ReactJS</p>
-            <p><strong>Key Skills:</strong> Backend Development, Cloud Storage, Microservices Architecture, Machine
-                Learning, Data Security</p>
+            <h2>Skills & Interests</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Programming Languages & Tools</h3>
+                    <p>Python, Swift, Matlab, ReactJS, GoLang, Docker, Celery, Redis, MongoDB, Github</p>
+                    <h3>Key Skills</h3>
+                    <p>Machine Learning, Social Networks, Complex Networks, Digital Image Processing</p>
+                    <h3>Interests</h3>
+                    <p>Engaging in research-driven projects, particularly those involving machine learning, AI, and
+                        their applications in various fields.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="section">
         <div class="container text-center">
             <h2>Contact</h2>
+            <p>If you are interested in my work or have any questions, please feel free to reach out to me via email or
+                LinkedIn.</p>
             <p><strong>Email:</strong> <a href="mailto:benyamin.eb@gmail.com">benyamin.eb@gmail.com</a></p>
             <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ben-eb/"
-                    target="_blank">linkedin.com/in/ben-eb</a></p>
+                    target="_blank">https://www.linkedin.com/in/ben-eb/</a></p>
+            <a href="mailto:benyamin.eb@gmail.com" class="btn btn-primary">Contact Me</a>
         </div>
     </section>
 
     <footer>
         <div class="container footer-links">
-            <a href="#about">About</a> |
             <a href="#education">Education</a> |
+            <a href="#research">Research</a> |
             <a href="#experience">Experience</a> |
             <a href="#skills">Skills</a> |
             <a href="#contact">Contact</a>
