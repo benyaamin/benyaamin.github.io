@@ -2,313 +2,712 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benyamin Agha Ebrahimi - Professional CV</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benyamin Agha Ebrahimi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .navbar {
-            background-color: #007bff;
-            padding: 15px;
+        :root {
+            --bg: #0a0a0a;
+            --bg-secondary: #111111;
+            --card: #151515;
+            --border: #232323;
+            --text: #f2f2f2;
+            --text-secondary: #9c9c9c;
+            --accent: #4ea1ff;
+            --accent-soft: rgba(78, 161, 255, 0.1);
+            --max-width: 1180px;
         }
 
-        .navbar-brand,
-        .navbar-nav .nav-link {
-            color: #fff;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 92%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            background: rgba(10, 10, 10, 0.78);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 0;
+        }
+
+        .brand {
+            font-size: 0.95rem;
+            letter-spacing: 0.18em;
             font-weight: 700;
         }
 
-        .navbar-nav .nav-link:hover {
-            color: #ffcc00;
+        .brand span {
+            color: var(--accent);
         }
 
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 60px 0;
-            text-align: center;
+        .nav-links {
+            display: flex;
+            gap: 34px;
         }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .nav-links a {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            transition: 0.25s ease;
         }
 
-        header p {
-            font-size: 1.2rem;
+        .nav-links a:hover {
+            color: var(--text);
         }
 
-        .profile-picture {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-top: 20px;
-            border: 5px solid #fff;
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
         }
 
-        .section {
-            padding: 60px 0;
-            background-color: #fff;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(78, 161, 255, 0.16), transparent 70%);
+            top: -120px;
+            right: -140px;
+            pointer-events: none;
         }
 
-        .section h2 {
-            font-size: 2rem;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-subtitle {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.78rem;
+            margin-bottom: 26px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 7vw, 6.2rem);
+            line-height: 0.95;
+            margin-bottom: 26px;
+            font-weight: 800;
+            letter-spacing: -0.06em;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-title {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            max-width: 760px;
+        }
+
+        .hero-description {
+            color: #b7b7b7;
+            max-width: 760px;
+            font-size: 1.05rem;
             margin-bottom: 40px;
-            text-align: center;
-            color: #007bff;
         }
 
-        .section p,
-        .section ul {
-            font-size: 1rem;
-            line-height: 1.6;
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .footer-links a {
-            color: #ffcc00;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .footer-links a:hover {
-            color: #fff;
+        .btn-primary,
+        .btn-secondary {
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: 0.3s ease;
+            border: 1px solid transparent;
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        .profile-card {
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, #141414, #0d0d0d);
+            border-radius: 24px;
+            padding: 24px;
+        }
+
+        .profile-card img {
+            width: 100%;
+            border-radius: 18px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-meta {
+            margin-top: 22px;
+        }
+
+        .profile-meta p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            margin-bottom: 8px;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+            letter-spacing: -0.05em;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            max-width: 760px;
+            margin-bottom: 60px;
+        }
+
+        /* GRID */
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 34px;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(78, 161, 255, 0.4);
+        }
+
+        .card small {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.72rem;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.45rem;
+            margin-bottom: 18px;
+            letter-spacing: -0.03em;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .tech-stack span {
+            background: var(--accent-soft);
+            border: 1px solid rgba(78, 161, 255, 0.12);
+            color: #d4e7ff;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 0.84rem;
+        }
+
+        /* RESEARCH */
+
+        .research-box {
+            background: linear-gradient(180deg, #131313, #0f0f0f);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            padding: 42px;
+        }
+
+        .research-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .research-box p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .research-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 26px;
+        }
+
+        .research-list div {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            color: #d7d7d7;
+        }
+
+        /* FOCUS AREAS */
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .focus-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.3s ease;
+        }
+
+        .focus-item:hover {
+            border-color: rgba(78, 161, 255, 0.4);
+        }
+
+        .focus-item h4 {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .focus-item p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: -0.05em;
+        }
+
+        .contact p {
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .contact-links a {
+            border: 1px solid var(--border);
+            padding: 14px 20px;
+            border-radius: 12px;
+            transition: 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .contact-links a:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        footer {
+            padding: 42px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: #6f6f6f;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media(max-width: 1000px) {
+
+            .hero-grid,
+            .grid-2,
+            .focus-grid,
+            .research-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Benyamin</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#research">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">BENYAMIN<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="#systems">Systems</a>
+                <a href="#research">Research</a>
+                <a href="#focus">Focus Areas</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <h1>Benyamin Agha Ebrahimi</h1>
-            <p>Artificial Intelligence | Applied Machine Learning | Software Developer | R&D @ Setflow</p>
-            <!-- <img src="src/images/photo_2024-04-16_16-44-11 2.jpg" alt="Ben's Profile Picture" class="profile-picture"> -->
-            <img src="src/images/2024-09-07 22.26.21.jpg" alt="Ben's Profile Picture" class="profile-picture">
-        </div>
-    </header>
+    <section class="hero">
+        <div class="container hero-grid">
 
-    <section id="education" class="section">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3>MSc in Artificial Intelligence</h3>
-                    <p><strong>Amirkabir University of Technology, Tehran, Iran</strong></p>
-                    <p>Oct 2018 - Thesis: Multilabel Classification Focusing on Biology Dataset</p>
-                    <p>Supervisor: Dr. Maryam A. Haeri</p>
+            <div>
+                <div class="hero-subtitle">AI • Distributed Systems • Research</div>
+
+                <h1>
+                    Benyamin<br>
+                    <span>Agha Ebrahimi</span>
+                </h1>
+
+                <p class="hero-title">
+                    Development Team Lead | AI & Backend Systems | Applied Intelligence & Research
+                </p>
+
+                <p class="hero-description">
+                    Building scalable intelligent systems across AI infrastructure, distributed backend architecture,
+                    financial technologies, and applied research.
+
+                    My work spans production-grade backend engineering, AI-driven platforms, market systems,
+                    computational social networks, and scalable infrastructure.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://www.linkedin.com/in/ben-eb/" target="_blank" class="btn-primary">
+                        LinkedIn
+                    </a>
+
+                    <a href="mailto:benyamin.eb@gmail.com" class="btn-secondary">
+                        Contact
+                    </a>
                 </div>
-                <div class="col-lg-6">
-                    <h3>BSc in Computer Engineering</h3>
-                    <p><strong>IAU, Tehran, Iran</strong></p>
-                    <p>Sep 2014 - Thesis: Human Mobile Interaction on iOS Devices</p>
-                    <p>Supervisor: Dr. Nima Shahbazi</p>
+            </div>
+
+            <div class="profile-card">
+                <img src="src/images/2024-09-07 22.26.21.jpg" alt="Benyamin Agha Ebrahimi">
+
+                <div class="profile-meta">
+                    <p>Currently building systems and infrastructure in the digital asset and financial technology
+                        space.</p>
+                    <p>MSc in Artificial Intelligence — Amirkabir University of Technology</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="systems">
+        <div class="container">
+
+            <h2 class="section-title">Selected Systems</h2>
+
+            <p class="section-subtitle">
+                A selection of engineering and research-driven systems spanning AI infrastructure,
+                distributed storage, social network analysis, financial systems, and backend architecture.
+            </p>
+
+            <div class="grid-2">
+
+                <div class="card">
+                    <small>AI Infrastructure</small>
+                    <h3>aiMoodboard</h3>
+
+                    <p>
+                        Led backend development for an AI-driven production platform involving distributed services,
+                        storage systems, scalable APIs, and cross-functional engineering coordination.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>Distributed Systems</span>
+                        <span>Microservices</span>
+                        <span>Scalable APIs</span>
+                        <span>Cloud Infrastructure</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <small>Storage Infrastructure</small>
+                    <h3>Distributed Storage Migration</h3>
+
+                    <p>
+                        Architected and led migration from legacy S3 infrastructure into a custom storage pipeline using
+                        Box and Cloudflare services, optimizing large-scale file delivery and archive generation.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>Cloudflare</span>
+                        <span>Storage Systems</span>
+                        <span>Concurrency</span>
+                        <span>High-Volume Requests</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <small>Financial Systems</small>
+                    <h3>Market Making Infrastructure</h3>
+
+                    <p>
+                        Developing automated market systems and exchange-oriented infrastructure focused on liquidity,
+                        execution workflows, and real-time trading operations.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>Web3</span>
+                        <span>Trading Systems</span>
+                        <span>Automation</span>
+                        <span>Low-Latency Services</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <small>Research & Analytics</small>
+                    <h3>Social Network Analytics Platform</h3>
+
+                    <p>
+                        Conducted interdisciplinary research on Persian Twitter datasets with emphasis on community
+                        detection, influencer analysis, trend discovery, and scalable data processing.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>Machine Learning</span>
+                        <span>Graph Analytics</span>
+                        <span>Data Mining</span>
+                        <span>Network Science</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container">
+
+            <h2 class="section-title">Research & Academic Background</h2>
+
+            <p class="section-subtitle">
+                Academic work focused on machine learning, graph-based systems, multi-label classification,
+                and computational social networks.
+            </p>
+
+            <div class="research-box">
+                <h3>MSc in Artificial Intelligence</h3>
+
+                <p>
+                    Amirkabir University of Technology — Tehran, Iran
+                </p>
+
+                <p>
+                    Thesis research focused on multi-label classification methods across biological and graph-based
+                    datasets, comparing deep learning and propagation-based approaches using metrics such as accuracy,
+                    hamming loss, and average precision.
+                </p>
+
+                <div class="research-list">
+                    <div>Multi-label Classification</div>
+                    <div>Graph-based Learning</div>
+                    <div>Community Detection</div>
+                    <div>Computational Social Networks</div>
+                    <div>Applied Machine Learning</div>
+                    <div>Data Mining & Analytics</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="research" class="section">
+    <section id="focus">
         <div class="container">
-            <h2>Research Experience</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Social Network Researcher</h3>
-                    <p><strong>Naazer, Tehran, Iran</strong> | Feb 2018 - Apr 2020</p>
-                    <ul>
-                        <li>Conducted interdisciplinary R&D to develop a dashboard analyzing Persian Twitter data.</li>
-                        <li>Specialized in trends analysis, community detection, and influencer identification.</li>
-                        <li>Scaled platform capabilities from 40K to 1.5M tweets per day.</li>
-                    </ul>
-                    <p><strong>Technologies Used:</strong> Python, Tweepy, Scipy, Numpy, Pandas, Scikit-Learn, Django,
-                        MongoDB, Celery, Plotly, Dash, Matplotlib</p>
+
+            <h2 class="section-title">Focus Areas</h2>
+
+            <p class="section-subtitle">
+                Core domains spanning engineering, intelligent systems, infrastructure, and applied research.
+            </p>
+
+            <div class="focus-grid">
+
+                <div class="focus-item">
+                    <h4>Distributed Backend Systems</h4>
+                    <p>
+                        Scalable service-oriented architecture, concurrency, infrastructure engineering,
+                        and high-volume backend systems.
+                    </p>
                 </div>
+
+                <div class="focus-item">
+                    <h4>AI Infrastructure</h4>
+                    <p>
+                        Applied machine learning systems, intelligent workflows, model-driven platforms,
+                        and production-oriented AI engineering.
+                    </p>
+                </div>
+
+                <div class="focus-item">
+                    <h4>Financial Technologies</h4>
+                    <p>
+                        Market systems, trading automation, exchange infrastructure,
+                        and emerging digital asset technologies.
+                    </p>
+                </div>
+
+                <div class="focus-item">
+                    <h4>Computational Social Networks</h4>
+                    <p>
+                        Community detection, trend analysis, influencer discovery,
+                        and large-scale social data processing.
+                    </p>
+                </div>
+
+                <div class="focus-item">
+                    <h4>System Architecture</h4>
+                    <p>
+                        Designing resilient software systems with emphasis on scalability,
+                        maintainability, and operational efficiency.
+                    </p>
+                </div>
+
+                <div class="focus-item">
+                    <h4>Applied Research</h4>
+                    <p>
+                        Bridging academic methodologies with practical engineering systems and production environments.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="research-results" class="section">
-        <div class="container">
-            <h2>Research Results: MSc Thesis</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>In my MSc thesis, I analyzed and compared four different models for multi-label classification:
-                        LIFT, Deep Learning (RBMs), and Graph-based models. I focused on evaluating these models using
-                        metrics like Accuracy, Hamming Loss, and Average Precision.</p>
-                    <p>Here are the key results:</p>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Algorithm</th>
-                                <th>Genbase (Accuracy)</th>
-                                <th>Yeast (Accuracy)</th>
-                                <th>Enron (Accuracy)</th>
-                                <th>Image (Accuracy)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>LIFT</td>
-                                <td>0.982</td>
-                                <td>0.5194</td>
-                                <td>0.3497</td>
-                                <td>0.4356</td>
-                            </tr>
-                            <tr>
-                                <td>Three-layered RBM</td>
-                                <td>0.0089</td>
-                                <td>0.4566</td>
-                                <td>0.3072</td>
-                                <td>0.3653</td>
-                            </tr>
-                            <tr>
-                                <td>Propagation with extra nodes</td>
-                                <td>0.9933</td>
-                                <td>0.541</td>
-                                <td>0.3269</td>
-                                <td>0.4403</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>Overall, the LIFT technique showed the best results for the Average Precision metric across all
-                        datasets. However, the Propagation with extra nodes approach outperformed in Accuracy for all
-                        datasets except Enron and showed better Hamming Loss for Genbase and Enron datasets.</p>
-                    <p><strong>Technologies Used:</strong> Python, Matplotlib, Matlab, Scikit-learn</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="contact">
+        <div class="container contact">
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3>Senior Back-End Developer</h3>
-                    <p><strong>Setflow, Tehran, Iran</strong> | Feb 2020 - Present</p>
-                    <ul>
-                        <li>Designed and developed scalable back-end services using Golang and MongoDB.</li>
-                        <li>Led API design and integration efforts between front-end and back-end teams.</li>
-                        <li>Contributed to <a href="https://ai.setflow.io" target="_blank">AI.Setflow</a>, enhancing its
-                            capabilities.</li>
-                    </ul>
-                    <p><strong>Technologies Used:</strong> Golang, Fiber, Docker, RESTful APIs, Microservice, MongoDB,
-                        Git, Jira</p>
-                </div>
-                <div class="col-lg-6">
-                    <h3>Full Stack Developer</h3>
-                    <p><strong>Freelance SAAS Project, Tehran, Iran</strong> | July 2021 - Sep 2022</p>
-                    <ul>
-                        <li>Developed and implemented a GIS platform for a B2C business.</li>
-                        <li>Handled both back-end and front-end development tasks, ensuring seamless integration.</li>
-                        <li>Designed RESTful APIs and managed databases using Django and PostgreSQL.</li>
-                    </ul>
-                    <p><strong>Technologies Used:</strong> Python, Django, PostgreSQL, RESTful APIs, Unit Test, Docker,
-                        Celery, Redis, Github</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills & Interests</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Programming Languages & Tools</h3>
-                    <p>Python, Swift, Matlab, ReactJS, GoLang, Docker, Celery, Redis, MongoDB, Github</p>
-                    <h3>Key Skills</h3>
-                    <p>Machine Learning, Social Networks, Complex Networks, Digital Image Processing</p>
-                    <h3>Interests</h3>
-                    <p>Engaging in research-driven projects, particularly those involving machine learning, AI, and
-                        their applications in various fields.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container text-center">
             <h2>Contact</h2>
-            <p>If you are interested in my work or have any questions, please feel free to reach out to me via email or
-                LinkedIn.</p>
-            <p><strong>Email:</strong> <a href="mailto:benyamin.eb@gmail.com">benyamin.eb@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ben-eb/"
-                    target="_blank">https://www.linkedin.com/in/ben-eb/</a></p>
-            <a href="mailto:benyamin.eb@gmail.com" class="btn btn-primary">Contact Me</a>
+
+            <p>
+                Open to collaborations, research opportunities, engineering leadership,
+                and technically ambitious systems.
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:benyamin.eb@gmail.com">
+                    benyamin.eb@gmail.com
+                </a>
+
+                <a href="https://www.linkedin.com/in/ben-eb/" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/benyaamin" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="tel:+989193391636">
+                    +98 919 339 1636
+                </a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="container footer-links">
-            <a href="#education">Education</a> |
-            <a href="#research">Research</a> |
-            <a href="#experience">Experience</a> |
-            <a href="#skills">Skills</a> |
-            <a href="#contact">Contact</a>
+        <div class="container">
+            <p>
+                © 2026 Benyamin Agha Ebrahimi — Engineering, AI Systems & Applied Research
+            </p>
         </div>
-        <p>&copy; 2024 Benyamin Agha Ebrahimi. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
